@@ -1,19 +1,19 @@
-extends Node
+extends Area2D
+
+signal purchased(item)
 
 var clickspersec = 0.1
 var cost = 3
 var currenttospend = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	body_entered.connect(_on_body_entered)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Button.text = "+" + str(clickspersec) + " clicks per second \n(" + str(cost) + " cookies)"
-	
-	if currenttospend < cost:
-		$Button.disabled
-	else:
-		$Button.disabled = false
+	$Button.disabled = currenttospend < cost   # <-- fixed (see note)
+
+func _on_body_entered(body: Node2D) -> void:
+	if currenttospend >= cost:
+		purchased.emit(self)
+		print(currenttospend)

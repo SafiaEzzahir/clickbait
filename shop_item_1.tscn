@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bjin4y6ep8vyn"]
+
+[ext_resource type="Script" uid="uid://scypwnsgxpic" path="res://shop_item_1.gd" id="1_yu7qh"]
+[ext_resource type="Texture2D" uid="uid://c6e546me1jhew" path="res://art/pointer.png" id="2_7yhhg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c57u"]
+size = Vector2(253, 55)
+
+[node name="ShopItem1" type="Area2D" unique_id=626753694]
+script = ExtResource("1_yu7qh")
+
+[node name="Button" type="Button" parent="." unique_id=1495790485]
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 256.0
+offset_bottom = 39.0
+disabled = true
+text = "+1 clicks per second
+(40 cookies)"
+icon = ExtResource("2_7yhhg")
+expand_icon = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2012468256]
+position = Vector2(130.5, 31.5)
+shape = SubResource("RectangleShape2D_4c57u")

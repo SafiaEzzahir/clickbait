@@ -9,4 +9,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	text = str(cookies) + " cookies \n per second: " + str(cookiespersec)
+	text = str(int(cookies)) + " cookies \n per second: " + str(cookiespersec)
