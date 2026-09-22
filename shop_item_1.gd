@@ -1,7 +1,7 @@
 extends Node
 
 var clickspersec = 0.1
-var cost = 40
+var cost = 3
 var currenttospend = 0
 
 # Called when the node enters the scene tree for the first time.
